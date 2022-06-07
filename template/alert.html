@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Error Message</title>
+</head>
+
+<style>
+body,
+		html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			background: grey !important;
+		}
+p.firstText::first-letter {
+  font-size: 200%;
+  color: white;
+}
+
+p.firstText{
+    font-size: 50px;
+    padding: 20px;
+    margin-top: 50px;
+    text-align: center;
+    color: white;
+}
+p.alter{
+    margin-left: 500px;
+    margin-top: -50px;
+    color: white;
+    text-align: center;
+}
+p.alter1{
+    margin-top: 10px;
+    margin-left: 900px;
+    color: white;
+}
+</style>
+<body>
+
+    {% include 'navBar.html' %}
+    {% csrf_token %}
+
+
+    
+
+	<div class="container-fluid" >
+
+       <p class = "firstText">{{result}}</p>
+       
+       <div align = "center"><p style=" color: white; font-size: 25px;"> We only support English language at the moment</p></div>
+       <p style="text-align: center; color: white; font-size: 20px;">Click <a href="home.html" title="On clicking this will take you to home page">here</a> to go back</p>
+     </div>
+</div>
+    
+
+
+
+   
+</body>
+</html>

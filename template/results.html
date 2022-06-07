@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+{% include 'navBar.html' %}
+
+{% csrf_token %}
+<h1 align = "center"> Web Search Result: {{sentiment}} related content. </h1>
+
+{% for key, value in result.items %}
+    
+
+<div style="background-color: white;width: 97%;border: 4px solid #8A2BE2;padding: 10px;margin: 5px; border-radius: 25px;">
+
+        <br>
+        <h3><a href="{{key}}">{{key}}</a></h3>
+
+        <p align = "justify">{{value}}</p>
+        <br>
+</div>
+
+
+    
+
+
+{% endfor %}
+   
+
+</html>

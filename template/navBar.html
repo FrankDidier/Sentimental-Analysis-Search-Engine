@@ -1,0 +1,25 @@
+<!--
+  The name of the file is navBar.html which contains all the html code.
+  The second file is navBarStyle.css which contains all the related styles.
+  The original nav bar code was found fron the website W3Schools.com
+  Source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_topnav 
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/static/css/navBarStyle.css">
+  <!-- Invoking the javascript file (navBarJScript.js) for responsiveness located in /static/js/navBarJScript.js -->
+  <script type="text/javascript" src="/static/js/navBarJScript.js"></script>
+<title>Sentimental Analysis Search Engine - Tsinghua University</title>
+</head>
+  <body>
+    <div class="topnav" id="myTopnav" style="background-color: #8A2BE2;">
+      <a href="home.html" title= "This takes you to the home page"><i class="fa fa-home"></i>Home</a>
+      <a href="login.html" title = "Click here to see the trending topics"><i class = "fa fa-user-circle"></i>Login</a>
+      <!-- This code is for the three horizontal bar which would be enabled when the screen is shrinked (Responisive)-->
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()" title="Click here to expand the menu"><i class="fa fa-bars"></i></a>
+    </div>
+  </body>
+</html>

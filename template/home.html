@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!--This is the for invoking the CSS file (main.css)-->
+	<link rel="stylesheet" href='/static/css/main.css'>
+	<title>Home Page</title>
+</head>
+<body background="/static/img/0b98de239fcb91ef0411dd0b6185e47e.jpg">
+		<!-- 
+			Django Template Inheritence
+			Loads a template and renders it with the current context. This is a way of “including” other templates within a template.
+			The template name can either be a variable or a hard-coded (quoted) string, in either single or double quotes.
+			The basic syntax is  inlcude "filename.html"
+			Source: https://docs.djangoproject.com/en/3.0/ref/templates/builtins/#include
+			Basically we are extending the navigation bar from navBar.html file
+		-->
+		{% include 'navBar.html' %}
+		<div class="container-fluid" >
+			<p style="font-family: 'Lucida Console', Monospace;font-weight: bold; font-size: 40px;text-align: center;color: white;padding-top: 10%;margin-top: 0px;">Sentimental Analysis Search Engine</p>
+			<p class= "title" style="font-family: 'Georgia', Serif;padding-top: 1%;margin-top: 0px; color: #EE82EE;font-weight: bold;">Tsinghua University</p>
+			<form class="example" method = "post" title="Only English language is supported">
+				{% csrf_token %}
+				{{ form.name }}
+			<button type="submit" title="Search button" style="background: #8A2BE2;"><i class="fa fa-search"></i></button>
+			<div class="custom-control custom-radio">
+			<br>
+			<br>
+			<br>
+			<br>
+			<p class="radio" style="font-family: 'Lucida Console', Monospace;" title="Select one of the option that you want to filter your article">{{ form.options.0 }} &nbsp;&nbsp;&nbsp;&nbsp;  {{form.options.1}} &nbsp;&nbsp;&nbsp;&nbsp;    {{form.options.2}}</p>
+			</div>
+			</form>
+
+
+
+<p style="font-family: 'Lucida Console', Monospace;font-weight: bold;padding-top: 15%;margin-top: 0px; text-align: center;">Isingizwe Didier Frank</p>
+			<p style="font-family: 'Lucida Console', Monospace;font-weight: bold;padding-top: -15%;margin-top: 0px; text-align: center;">2019280803</p>
+			<p style="font-family: 'Lucida Console', Monospace;font-weight: bold;padding-top: -15%;margin-top: 0px; text-align: center;">Tsinghua University</p>
+			<p style="font-family: 'Lucida Console', Monospace;font-weight: bold;padding-top:-15%;margin-top: 0px; text-align: center;">Department of Computer Science and Technology</p>
+			<p style="font-family: 'Lucida Console', Monospace;font-weight: bold;padding-top: -15%;margin-top: 0px; text-align: center;">Network Security Lab</p>
+		</div>
+	</body>
+</html>

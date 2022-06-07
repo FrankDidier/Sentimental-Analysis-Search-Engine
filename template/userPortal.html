@@ -1,0 +1,92 @@
+<!-- 
+	The author of this code is @Tanu Nanda Prabhu.
+	The name of the file is userPortal.html which contains all the html code.
+	The original nav bar code was found fron the website bootsnipp.com
+  Source: https://bootsnipp.com/snippets/3522X
+	This html file has a associated CSS file reference which is called userPortalStyle.css located in the static folder static\css\userPortalStyle.css.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <!--This is the for invoking the CSS file (userPortalStyle.css, navBarStyle.css)-->
+    <link rel="stylesheet" href="/static/css/userPortalStyle.css">
+    <link rel="stylesheet" href="/static/css/navBarStyle.css">
+    <!-- Invoking the javascript file (navBarJScript.js) for responsiveness located in /static/js/navBarJScript.js -->
+    <script type="text/javascript" src="/static/js/navBarJScript.js"></script>
+    <!-- Invoking the javascript file (messageScreenTime.js) for retaining the message on the screen located in /static/js/messageScreenTime.js -->
+    <script src="/static/js/messageScreenTime.js"></script>
+    <title>User Portal</title>
+</head>
+<body>
+  <div class="topnav" id="myTopnav">
+      <a href="ise.html" title= "Click here to know more about the improved search engine"><i class="fa fa-star" ></i>ISE</a>			
+      <a href="home.html" title= "This takes you to the home page"><i class="fa fa-home"></i>Home</a>
+      <a href="projectTeam.html" title = "Click here to know more about the project teams"><i class="fa fa-users"></i>Project Team</a>
+      <a href="login.html" title = "Click here to see the trending topics"><i class = "fa fa-user-circle"></i>User Portal</a>
+      <a href="{% url 'logout' %}" class="right" title="Do you want to really logout - {{request.user}}"><i class="fa fa-sign-out-alt"></i>Logout</a>
+      <!-- This code is for the three horizontal bar which would be enabled when the screen is shrinked (Responisive)-->
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()" title="Click here to expand the menu"><i class="fa fa-bars"></i></a>
+    </div>
+
+    <div class="container h-100">
+              <!-- Main Content -->
+              <div id="content">
+                <!--
+                  The messages framework
+                  Quite commonly in web applications, you need to display a one-time notification message (also known as “flash message”) to the user after processing a form or some other types of user input.
+                  For this, Django provides full support for cookie- and session-based messaging, for both anonymous and authenticated users. 
+                  The messages framework allows you to temporarily store messages in one request and retrieve them for display in a subsequent request (usually the next one). 
+                  Every message is tagged with a specific level that determines its priority (e.g., info, warning, or error).
+                  Source: https://docs.djangoproject.com/en/3.0/ref/contrib/messages/
+                  With the help of django Template Inheritence we can extend the message properties from message.html file
+              	-->
+                    {% include 'messages.html' %}
+                    {% block content %}  {% endblock content %}      
+            </div>
+      <div class="d-flex justify-content-center h-100">
+        <div class="user_card">
+          <div class="d-flex justify-content-center">
+            <div class="brand_logo_container">
+               <h4 class = "login">{{request.user}}'s Portal</h4>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-center form_container">
+            <form method="POST">
+                {% csrf_token %}
+              <div class="input-group mb-2">
+                <div class="input-group-append">
+                  <span class="input-group-text"><i class="fas fa-newspaper"></i></span>
+                </div>
+                <p> {{ form.topic}} </p>
+              </div>
+              <p class="heading">Select the sentiment of the article</p>
+
+              <div class="input-group mb-2">
+                <div class="input-group-append">
+                  <span class="input-group-text"><i class="fas fa-filter"></i></span>
+                </div>
+                <p class="dropdown"> {{ form.options}} </p>
+              </div>
+                <div class="d-flex justify-content-center mt-3 login_container">
+              <button type="submit" name="button" class="btn login_btn">Save</button>
+              </div>
+              <br>
+              <br>
+              <a href="viewYourUpdatedResults.html" class = "viewlink">View Your Updated Results</a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>  
+</body>
+</html>

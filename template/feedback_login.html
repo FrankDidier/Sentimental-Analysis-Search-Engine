@@ -1,0 +1,85 @@
+<!--The author of this code is @Tanu Nanda Prabhu.
+The name of the file is login.html which contains all the html code.
+The original nav bar code was found fron the website bootsnipp.com
+Source: https://bootsnipp.com/snippets/3522X
+This html file has a associated CSS file reference which is called loginStyle.css located in the static folder static\css\loginStyles.css.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--This is the for invoking the CSS file (loginStyle.css, navBarStyle.css)-->
+<link rel="stylesheet" href="/static/css/loginStyle.css">
+<link rel="stylesheet" href="/static/css/navBarStyle.css">
+<!-- Invoking the javascript file (navBarJScript.js) for responsiveness located in /static/js/navBarJScript.js -->
+<script type="text/javascript" src="/static/js/navBarJScript.js"></script>
+<!-- Invoking the javascript file (messageScreenTime.js) for retaining the message on the screen located in /static/js/messageScreenTime.js -->
+<script src="/static/js/messageScreenTime.js"></script>
+</head>
+<body>
+<!-- 
+    Django Template Inheritence
+    Loads a template and renders it with the current context. This is a way of “including” other templates within a template.
+    The template name can either be a variable or a hard-coded (quoted) string, in either single or double quotes.
+    The basic syntax is  inlcude "filename.html"
+    Source: https://docs.djangoproject.com/en/3.0/ref/templates/builtins/#include
+    Basically we are extending the navigation bar from navBar.html file
+-->
+{% include 'navBar.html' %}
+<div class="container h-100">
+
+<!-- Main Content -->
+<div id="content">
+
+<!--
+    The messages framework
+    Quite commonly in web applications, you need to display a one-time notification message (also known as “flash message”) to the user after processing a form or some other types of user input.
+    For this, Django provides full support for cookie- and session-based messaging, for both anonymous and authenticated users. 
+    The messages framework allows you to temporarily store messages in one request and retrieve them for display in a subsequent request (usually the next one). 
+    Every message is tagged with a specific level that determines its priority (e.g., info, warning, or error).
+    Source: https://docs.djangoproject.com/en/3.0/ref/contrib/messages/
+    With the help of django Template Inheritence we can extend the message properties from message.html file
+-->
+    {% include 'messages.html' %}
+    {% block content %}  {% endblock content %}
+</div>
+    <div class="d-flex justify-content-center h-100">
+        <div class="user_card">
+            <div class="d-flex justify-content-center">
+                <div class="brand_logo_container">
+                    <h1 class = "login">Login</h1>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center form_container">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="input-group mb-3">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        </div>
+                        <input type="text" name="username" placeholder="Username..." class="form-control">
+                    </div>
+                    <div class="input-group mb-2">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        </div>
+                            <input type="password" name="password" placeholder="Password..." class="form-control" >
+                    </div>
+                        <div class="d-flex justify-content-center mt-3 login_container">
+                            <input class="btn login_btn" type="submit" value="Login">
+                        </div>
+                </form>
+            </div>
+            <div class="mt-4">
+                <div class="d-flex justify-content-center links">
+                    Don't have an account? <a href="register.html" class="ml-2">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
