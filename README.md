@@ -9,7 +9,7 @@ This experiment can be applied to other broad applications such as topic labelin
 
 From the figure below, the query goes to google with the use of API and perform a given query and then search results get cleaned for being feed into my classifier and then the output will depend on which filter the user chose to use depending on what the user wants to see either positive, negative or neutral. 
 
-![Icon](./images/SASEDesign.png)
+![Icon](./images/WechatIMG5031.jpeg)
 
 ## Methodology
 * You can read more about the method used in the pdf report document for further details.
