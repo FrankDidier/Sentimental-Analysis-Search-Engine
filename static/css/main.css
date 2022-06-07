@@ -1,0 +1,102 @@
+/*
+ * main.css
+ *
+ *
+ *
+ * Index
+ * - Form Buttons
+ * - Fonts
+ * - Radio Buttons
+ * - Search Button
+ * - Input Text Area
+ * - Background Color and fonts
+ *
+ */
+
+p.title
+{
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 40px;
+  text-align: center;
+  color: white;
+  padding-top: 10%;
+  margin-top: 0px;
+}
+
+* 
+{
+  box-sizing: border-box;
+}
+
+form.example input[type=text] 
+{
+  border-radius: 25px;
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 45%;
+  margin-left: 20%;
+  margin-top: 5px;
+  background: whitesmoke;
+}
+
+form.example button 
+{
+  border-radius: 25px;
+  float: left;
+  width: 15%;
+  padding: 10px;
+  background: #8A2BE2;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+form.example button:hover 
+{
+  background: #FF00FF;
+}
+
+form.example::after 
+{
+  content: "";
+  clear: both;
+  display: table;   
+}
+
+p.radio 
+{
+  margin-top: -10px;
+  text-align: center;  color: 8A2BE2;
+  zoom:150%;
+}
+
+p
+{
+  color: white;
+}
+
+body 
+{
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat:no-repeat ;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: Arial;
+  height: 100%;
+  margin-top: 50px;
+}
+
+label.custom-control-label
+{
+  color: white;
+}
