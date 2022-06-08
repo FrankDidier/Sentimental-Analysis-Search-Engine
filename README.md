@@ -1,5 +1,5 @@
 # Sentimental-Analysis-Search-Engine
-The search engine that have the ability to classy query results based on the sentimental analysis Developed in Python Django.
+The search engine that have the ability to classify query results based on the sentimental analysis Developed in Python Django.
 
 Sentiment analysis (Or opinion mining) refers to us as the process of determining the emotional tone behind a series of words, used to gain an understanding of the attitudes, opinions and emotions expressed, while text classification is the process of assigning tags or categories to text according to its content. In this work, i integrated a smart sentiment detector in a search engine that retrieves Positive, Negative Neutral tagged data/results relevant to the query searched with a filter feature that let the user see positive results (good) only, negative results (Bad) only or neutral results (Not bad nor good).
 
